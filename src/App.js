@@ -7,19 +7,20 @@ const App = () => {
 
     // STATE VARIABLES
     const [gameActive, setGameActive] = useState(false);
+    const [league, setLeague] = useState("");
 
-    const startGameHandler = () =>{
+    const gameActiveHandler = () =>{
         setGameActive(true);
     }
 
     if(!gameActive){
         return(
-            <Homepage startGameHandler={startGameHandler}/>
+            <Homepage gameActiveHandler={gameActiveHandler} setLeague={setLeague}/>
         )
     }
     return(
         <Provider>
-        <Game/>
+        <Game league={league}/>
         </Provider>
     )
 }

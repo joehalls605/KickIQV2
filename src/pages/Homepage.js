@@ -1,13 +1,19 @@
 import React from 'react';
 
-const Homepage = ({startGameHandler}) => {
+const Homepage = ({gameActiveHandler, setLeague }) => {
+
+    const handleLeague = (league) => {
+        setLeague(league);
+        gameActiveHandler();
+    }
 
     return (
         <div>
             <h1>Homepage</h1>
             <h2>Time to test and enhance your football knowledge 💡</h2>
-            <button onClick={startGameHandler}>Premier League</button>
-            <button>LaLiga</button>
+            <button onClick={() => handleLeague("Premier League")}>Premier League</button>
+            <button onClick={() => handleLeague("LaLiga")}>La Liga</button>
+
         </div>
     )
 }

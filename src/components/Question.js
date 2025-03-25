@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
-import Hint from './/Hint';
+import Hint from './Hint';
 import ButtonGrid from './/ButtonGrid';
-import Timer from './/Timer';
-import Score from './/Score';
+import Timer from './Timer';
+import Score from './Score';
 
 
-const Question = () => {
+const Question = ({currentFootballerData}) => {
+
+    // CORRECT FOOTBALLER FOR QUESTION
+    // PASS CORRECT FOOTBALLER INTO BUTTONGRID
+    // PASS CORRECT FOOTBALLER INTO HINT
+
+
+
+
+
 
     return (
         <div>

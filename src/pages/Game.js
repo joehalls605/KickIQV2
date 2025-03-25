@@ -2,14 +2,14 @@ import React, {useContext}from 'react';
 import Question from '../components/Question';
 import footballersContext from '../context/footballersContext';
 
-const Game = () => {
+const Game = ({league}) => {
 
     const {currentFootballerData, setCurrentFootballerData} = useContext(footballersContext);
     console.log(currentFootballerData);
     return(
         <div>
-            <h1>Game Page</h1>
-            <Question />
+            <h1>{league}</h1>
+            <Question currentFootballerData={currentFootballerData} />
         </div>
     )
 }

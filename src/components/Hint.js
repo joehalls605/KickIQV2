@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Hint = () => {
-
     return (
         <div>
-            <h2>hint component</h2>
+            <p>
+                <span>Team: </span>
+            </p>
+            <p>
+                <span>Position: </span>
+            </p>
+            <p>
+                <span>Nationality: </span>
+            </p>
         </div>
-    )
-}
+    );
+};
 
 export default Hint;
