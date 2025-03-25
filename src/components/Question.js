@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Hint from '../Components/Hint';
-import ButtonGrid from '../Components/ButtonGrid';
-import Timer from '../Components/Timer';
-import Score from '../Components/Score';
+import Hint from './/Hint';
+import ButtonGrid from './/ButtonGrid';
+import Timer from './/Timer';
+import Score from './/Score';
 
 
 const Question = () => {
