@@ -1,16 +1,21 @@
 import React from 'react';
 
-const Hint = () => {
+const Hint = ({correctFootballer}) => {
+
+    if (!correctFootballer) {
+        return <p>No hints available.</p>;
+    }
+
     return (
         <div>
             <p>
-                <span>Team: </span>
+                <span>Club:{correctFootballer.club}</span>
             </p>
             <p>
-                <span>Position: </span>
+                <span>Position:{correctFootballer.position}</span>
             </p>
             <p>
-                <span>Nationality: </span>
+                <span>Nationality:{correctFootballer.nationality}</span>
             </p>
         </div>
     );
