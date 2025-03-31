@@ -5,7 +5,7 @@ const ButtonGrid = ({footballerOptions, handleAnswerClick}) => {
         <div>
             {footballerOptions.map((footballer, index) => {
                 return (
-                    <button onClick={handleAnswerClick} key={index} name={footballer.name}>{footballer.name}</button>
+                    <button onClick={() => handleAnswerClick(footballer)} key={index} name={footballer.name}>{footballer.name}</button>
                 )
             })}
         </div>
