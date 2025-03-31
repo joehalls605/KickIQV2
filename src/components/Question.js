@@ -10,7 +10,6 @@ const Question = ({filteredFootballers, handleNextQuestion, questionIndex}) => {
     let {correctFootballer, footballerOptions } = useFootballerOptions(filteredFootballers, questionIndex);
 
     const handleAnswerClick = (clickedFootballer) => {
-        console.log(clickedFootballer.name, correctFootballer);
         if(clickedFootballer && correctFootballer && clickedFootballer.name === correctFootballer.name){
             setScore(prevScore => prevScore + 1);
         }
