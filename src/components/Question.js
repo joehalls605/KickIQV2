@@ -6,15 +6,21 @@ import Score from './Score';
 import useFootballerOptions from '../hooks/useFootballerOptions';
 
 const Question = ({filteredFootballers, handleNextQuestion, questionIndex}) => {
+    const [score, setScore] = useState(0);
+    let {correctFootballer, footballerOptions } = useFootballerOptions(filteredFootballers, questionIndex);
 
-    const {correctFootballer, footballerOptions } = useFootballerOptions(filteredFootballers, questionIndex);
-
-    console.log("these are the four footballers!" + correctFootballer, footballerOptions);
+    const handleAnswerClick = (clickedFootballer) => {
+        if(clickedFootballer && correctFootballer && clickedFootballer.name === correctFootballer.name){
+            setScore(prevScore => prevScore + 1);
+        }
+        handleNextQuestion();
+    }
 
     return (
         <div>
+            <h4>Score: {score}</h4>
             <Hint correctFootballer={correctFootballer} />
-            <ButtonGrid footballerOptions={footballerOptions} />
+            <ButtonGrid footballerOptions={footballerOptions} handleAnswerClick={handleAnswerClick} />
             <button onClick={handleNextQuestion}>Next Question</button>
             <Timer/>
             <Score/>

@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ButtonGrid = ({footballerOptions}) => {
-
+const ButtonGrid = ({footballerOptions, handleAnswerClick}) => {
     return (
         <div>
             {footballerOptions.map((footballer, index) => {
-                <button
-                key={index}
-                name={footballer.name}
-                >
-                {footballer.name}
-                </button>
+                return (
+                    <button onClick={handleAnswerClick} key={index} name={footballer.name}>{footballer.name}</button>
+                )
             })}
         </div>
     );

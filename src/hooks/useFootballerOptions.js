@@ -22,7 +22,10 @@ const useFootballerOptions = (filteredFootballers, questionIndex) => {
                 .sort(() => Math.random() - 0.5);
 
             // Only update state if the data has actually changed
+
+            // setting correct footballer for the hint
             setCorrectFootballer(newCorrectFootballer);
+            // footballer options for the buttons
             setFootballerOptions(newFootballerOptions);
         };
 

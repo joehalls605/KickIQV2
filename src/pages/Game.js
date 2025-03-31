@@ -4,7 +4,6 @@ import footballersContext from '../context/footballersContext';
 
 const Game = ({ league }) => {
     const { currentFootballerData } = useContext(footballersContext);
-    console.log(currentFootballerData);
 
     const [questionIndex, setQuestionIndex] = useState(0);
     const [filteredFootballers, setFilteredFootballers] = useState([]);
@@ -17,7 +16,6 @@ const Game = ({ league }) => {
         setFilteredFootballers(filtered);
     }, [league, currentFootballerData])
 
-    console.log("footballer after filtering" + filteredFootballers);
     const handleNextQuestion = () => {
         setQuestionIndex((prevIndex) => prevIndex + 1);
     };
@@ -25,12 +23,16 @@ const Game = ({ league }) => {
     return (
         <div>
             <h1>{league}</h1>
-            <Question
-                filteredFootballers={filteredFootballers}
-                league={league}
-                questionIndex={questionIndex}
-                handleNextQuestion={handleNextQuestion}
-            />
+            {filteredFootballers.length >= 4 ? (
+                <Question
+                    filteredFootballers={filteredFootballers}
+                    league={league}
+                    questionIndex={questionIndex}
+                    handleNextQuestion={handleNextQuestion}
+                />
+            ) : (
+                <p>Loading player data...</p>
+            )}
         </div>
     );
 };

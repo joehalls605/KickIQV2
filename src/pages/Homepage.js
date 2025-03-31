@@ -12,7 +12,7 @@ const Homepage = ({gameActiveHandler, setLeague }) => {
             <h1>Homepage</h1>
             <h2>Time to test and enhance your football knowledge 💡</h2>
             <button onClick={() => handleLeague("Premier League")}>Premier League</button>
-            <button onClick={() => handleLeague("LaLiga")}>La Liga</button>
+            <button onClick={() => handleLeague("La Liga")}>La Liga</button>
 
         </div>
     )
