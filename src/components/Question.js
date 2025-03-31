@@ -3,28 +3,19 @@ import Hint from './Hint';
 import ButtonGrid from './/ButtonGrid';
 import Timer from './Timer';
 import Score from './Score';
-import useFootballerButtons from '../hooks/use-footballer-buttons';
+import useFootballerOptions from '../hooks/useFootballerOptions';
 
-const Question = ({currentFootballerData, league}) => {
+const Question = ({filteredFootballers, handleNextQuestion, questionIndex}) => {
 
-    // CORRECT FOOTBALLER FOR QUESTION
-    // PASS CORRECT FOOTBALLER INTO BUTTONGRID
-    // PASS CORRECT FOOTBALLER INTO HINT
+    const {correctFootballer, footballerOptions } = useFootballerOptions(filteredFootballers, questionIndex);
 
-    // FILTERED FOOTBALLER BY LEAGUE
-    const footballersByLeague = currentFootballerData.filter((footballer) => {
-        return footballer.league === league;
-    });
-
-    const {correctFootballer, footballerButtons } = useFootballerButtons(footballersByLeague);
-
-    console.log(correctFootballer, footballerButtons);
-
+    console.log("these are the four footballers!" + correctFootballer, footballerOptions);
 
     return (
         <div>
             <Hint correctFootballer={correctFootballer} />
-            <ButtonGrid footballerButtons={footballerButtons} />
+            <ButtonGrid footballerOptions={footballerOptions} />
+            <button onClick={handleNextQuestion}>Next Question</button>
             <Timer/>
             <Score/>
         </div>

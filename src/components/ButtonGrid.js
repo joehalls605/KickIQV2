@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 
-const ButtonGrid = () => {
+const ButtonGrid = ({footballerOptions}) => {
 
     return (
         <div>
-            <h2>button grid component</h2>
+            {footballerOptions.map((footballer, index) => {
+                <button
+                key={index}
+                name={footballer.name}
+                >
+                {footballer.name}
+                </button>
+            })}
         </div>
-    )
-}
+    );
+};
 
 export default ButtonGrid;
